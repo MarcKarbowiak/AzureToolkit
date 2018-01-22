@@ -36,6 +36,9 @@ export class UserService {
               case "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/email":
                 user.email = claim.val;
                 break;
+                case "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/jobtitle":
+                user.jobTitle = claim.val;
+                break;
             }
           });
 
