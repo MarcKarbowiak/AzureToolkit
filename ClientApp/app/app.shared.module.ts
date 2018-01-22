@@ -9,6 +9,9 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { SearchComponent } from './components/search/search.component';
+import { CommonAzureModule } from './common/common.azure.module';
+import {FaceGenderFilterPipe} from './common/models/faceGenderFilter'
 
 @NgModule({
     declarations: [
@@ -16,7 +19,9 @@ import { CounterComponent } from './components/counter/counter.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        SearchComponent,
+        FaceGenderFilterPipe
     ],
     imports: [
         CommonModule,
@@ -27,8 +32,10 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'search', component: SearchComponent },
             { path: '**', redirectTo: 'home' }
-        ])
+        ]),
+        CommonAzureModule
     ]
 })
 export class AppModuleShared {
